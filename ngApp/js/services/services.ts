@@ -13,15 +13,22 @@ namespace app.Services {
     private MovieResource: ng.resource.IResourceClass<IMovieResourceClass>;
 
     public getAll() {
+      // GET: /api/movies
       return this.MovieResource.query();
     }
 
     public create(movie: app.Interfaces.IMovie) {
+      // POST: /api/movies
       return this.MovieResource.save(movie).$promise;
     }
 
+    public delete(movieId: number) {
+      //DELETE: /api/movies/
+      return this.MovieResource.delete({id: movieId}).$promise;
+    }
+
     constructor(private $resource: ng.resource.IResourceService) {
-      this.MovieResource = <IMovieResource>$resource('/api/movies');
+      this.MovieResource = <IMovieResource>$resource('/api/movies/:id');
     }
   }
 

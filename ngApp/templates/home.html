@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col col-sm-1"> {{ m.id }} </div>
         <div class="col col-sm-2"> {{ m.title }} </div>
-        <div class="col col-sm-9"> {{ m.director }} </div>
+        <div class="col col-sm-1"> {{ m.director }} </div>
+        <div class="col col-sm-8">
+          <button type="button" class="btn btn-danger" ng-click="vm.deleteMovie(m)">Delete</button></div>
       </div>
     </div>
     <br>
